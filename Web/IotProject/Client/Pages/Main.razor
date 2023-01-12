@@ -1,0 +1,86 @@
+﻿@using IotProject.Client.Services.Contracts;
+@using IotProject.Shared;
+
+@page "/"
+
+<PageTitle>Home Temperature DHT11</PageTitle>
+
+<h3>Temperature and humidity monitor</h3>
+<hr />
+<h4>Current Temperature: @(currentTemperature)C</h4>
+<h4>Current Humidity: @(currentHumidity)%</h4>
+<hr />
+<h3>History</h3>
+<br />
+<div>
+    From:
+    <RadzenDatePicker @bind-Value=@startDate Min=@minDate Max=@DateTime.Now Change=@OnSelectedDateChange />
+    To:
+    <RadzenDatePicker @bind-Value=@endDate Min=@minDate Max=@DateTime.Now Change=@OnSelectedDateChange />
+</div>
+<br />
+
+<h4>Temperature</h4>
+<RadzenChart Style="height: 180px">
+    <RadzenLineSeries Data="temperatures"
+                      ValueProperty="Temperature"
+                      CategoryProperty="DateTime"
+                      Smooth="true"
+                      Title="Temperature">
+    </RadzenLineSeries>
+    <RadzenCategoryAxis Formatter=@(value => ((DateTime)value).ToLocalTime().ToString("MM/dd HH:mm")) />
+</RadzenChart>
+<h4>Humidity</h4>
+<RadzenChart Style="height: 180px">
+    <RadzenLineSeries Data="humidities"
+                      CategoryProperty="DateTime"
+                      ValueProperty="Humidity"
+                      Smooth="true"
+                      Title="Humidity">
+    </RadzenLineSeries>
+    <RadzenCategoryAxis Formatter=@(value => ((DateTime)value).ToLocalTime().ToString("MM/dd HH:mm")) />
+</RadzenChart>
+
+@code {
+    [Inject]
+    public ITemperatureService? TemperatureService { get; set; }
+
+
+    DateTime? startDate;
+    DateTime? endDate;
+
+    DateTime? minDate;
+
+    float? currentTemperature;
+    int? currentHumidity;
+
+    IEnumerable<TemperatureData>? temperatures;
+    IEnumerable<HumidityData>? humidities;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        var oldestDate = (await TemperatureService?.GetOldestAvailableDateAsync()!).Value;
+        startDate = minDate = oldestDate.ToLocalTime();
+
+        endDate = DateTime.Now;
+        await UpdateHistoryAsync(oldestDate, DateTime.UtcNow);
+        await UpdateCurrentAsync();
+    }
+
+    async void OnSelectedDateChange(DateTime? value)
+    {
+        await UpdateHistoryAsync(startDate!.Value, endDate!.Value);
+    }
+    async Task UpdateHistoryAsync(DateTime start, DateTime end)
+    {
+        temperatures = await TemperatureService?.GetInsideTemperaturesAsync(start.ToUniversalTime(), end.ToUniversalTime())!;
+        humidities = await TemperatureService?.GetInsideHumiditiesAsync(start.ToUniversalTime(), end.ToUniversalTime())!;
+    }
+    async Task UpdateCurrentAsync()
+    {
+        var data = await TemperatureService?.GetCurrentTemperatureAndHumidityAsync()!;
+        currentTemperature = data?.Temperature;
+        currentHumidity = data?.Humidity;
+    }
+}

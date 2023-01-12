@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\Administrator\Documents\Projects\IotProj\IotProject\Client\bin\Release\net6.0\browser-wasm\publish\</_PublishTargetUrl>
+    <History>True|2023-01-11T16:06:00.7542240Z;True|2023-01-10T04:54:17.0919066+03:30;False|2023-01-10T04:29:36.7231405+03:30;False|2023-01-10T04:27:45.7276196+03:30;False|2023-01-10T04:27:26.3139600+03:30;False|2023-01-10T04:26:54.1279606+03:30;False|2023-01-10T04:26:02.8260092+03:30;False|2023-01-10T03:49:41.4695267+03:30;False|2023-01-10T03:48:12.9706919+03:30;False|2023-01-10T03:46:06.2688736+03:30;False|2023-01-10T03:42:08.1312504+03:30;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

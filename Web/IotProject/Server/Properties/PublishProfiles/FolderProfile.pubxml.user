@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\Administrator\Documents\Projects\IotProj\IotProject\Server\bin\Release\net6.0\publish\</_PublishTargetUrl>
+    <History>True|2023-01-11T23:44:35.8280160Z;True|2023-01-12T01:41:06.5864442+03:30;True|2023-01-12T01:32:50.2090084+03:30;True|2023-01-11T21:56:21.0735750+03:30;True|2023-01-11T20:49:03.0773793+03:30;True|2023-01-11T20:35:28.1709415+03:30;True|2023-01-11T20:04:59.9977716+03:30;True|2023-01-11T19:06:50.5652585+03:30;True|2023-01-11T18:22:05.4646843+03:30;True|2023-01-10T21:31:10.3280263+03:30;True|2023-01-10T03:40:37.9115856+03:30;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

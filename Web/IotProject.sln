@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IotProject.Server", "IotProject\Server\IotProject.Server.csproj", "{10A763AA-C882-4B18-BAFB-D58F64181D73}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IotProject.Client", "IotProject\Client\IotProject.Client.csproj", "{0EC8CDCF-073B-426D-ADE0-73072A9618D6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IotProject.Shared", "IotProject\Shared\IotProject.Shared.csproj", "{D90BA4AF-73FC-4754-8A5A-C92663D0E786}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10A763AA-C882-4B18-BAFB-D58F64181D73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10A763AA-C882-4B18-BAFB-D58F64181D73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10A763AA-C882-4B18-BAFB-D58F64181D73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10A763AA-C882-4B18-BAFB-D58F64181D73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EC8CDCF-073B-426D-ADE0-73072A9618D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EC8CDCF-073B-426D-ADE0-73072A9618D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EC8CDCF-073B-426D-ADE0-73072A9618D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EC8CDCF-073B-426D-ADE0-73072A9618D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D90BA4AF-73FC-4754-8A5A-C92663D0E786}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D90BA4AF-73FC-4754-8A5A-C92663D0E786}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D90BA4AF-73FC-4754-8A5A-C92663D0E786}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D90BA4AF-73FC-4754-8A5A-C92663D0E786}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03383E1E-FF03-462A-ADC8-E8CED961BBD0}
+	EndGlobalSection
+EndGlobal
